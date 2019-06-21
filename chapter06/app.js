@@ -1,10 +1,9 @@
 
 angular.module("ch06app", [])
+
 .controller("Ch06Ctrl", function($scope) {
 
-  $scope.ShowFirstName = function() {
-    alert("Name is " + $scope.firstName);
-  }
+
 
   var person = {
     firstName:'Jimmy',
@@ -15,7 +14,11 @@ angular.module("ch06app", [])
       state: 'Western Australia'
     }
   }
-  $scope.person = person
+  $scope.person = person;
+
+  $scope.ShowFirstName = function() {
+    alert("Name is " + $scope.firstName);
+  }
 
 
 });
