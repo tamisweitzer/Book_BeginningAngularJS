@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Chapter 6 </title>
+  <script src="../js/angular.min.js"></script>
+  <script src="app.js"></script>
+</head>
+<body>
+  <div ng-app="ch06app">
+    <div ng-controller="Ch06Ctrl">
+      <form action="" name="theForm">
+        <input type="text" name="firstName" ng-model="person.firstName">
+        <br>
+        <input type="text" name="firstName" ng-model="person.address.street">
+        <br>
+        <input type="button" name="" value="Show the name" ngClick="ShowFirstName()">
+      </form>
+
+      <p>
+        First name is {{ person.firstName }}
+        <br>
+        Street name is {{ person.address.street }}
+      </p>
+
+      <form action=""></form>
+    </div>
+  </div>
+</body>
+</html>

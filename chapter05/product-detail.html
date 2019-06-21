@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myAppModule">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../js/angular.min.js"></script>
+  <script src="../js/myAppModule.js"></script>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <style>
+    body { font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, "sans-serif"; padding: 2em;  }
+    div { margin: 20px; padding: 20px; font-size: 16px; color: #fff; border-radius: 5px; }
+    #red { background-color: red; }
+    #green { background-color: green; }
+    #blue { background-color: blue; }
+    #purple { background-color: purple; }
+    #gray { background-color: gray; }
+    #olive { background-color: olive; }
+  </style>
+</head>
+<body ng-controller="myProductDetailCtrl">
+
+  <h2>Angular Socks</h2>
+  <p>Keep warm this winter with our 100% wool, 100% cool, AngularJS socks!</p>
+
+  <button ng-click="showHideColors()" type="button">
+    {{ isHidden ? 'Show Available Colors' : 'Hide Available Colors' }}
+  </button>
+
+  <div ng-cloak>
+    <div id="red" ng-hide="isHidden">Red</div>
+    <div id="green" ng-hide="isHidden">Green</div>
+    <div id="blue" ng-hide="isHidden">Blue</div>
+    <div id="purple" ng-hide="isHidden">Purple</div>
+    <div id="gray" ng-hide="isHidden">Gray</div>
+    <div id="olive" ng-hide="isHidden">Olive</div>
+  </div>
+
+  <span ng-include="'include-me.html'"></span>
+
+  <hr>
+
+  <h2>ngShow and ngHide</h2>
+  <p ng-show="correctAnswer">That answer is correct!</p>
+
+  <hr>
+
+  <h2>Directives</h2>
+
+  <p ng-bind="2+2"></p>
+
+  <p>{{ 2 + 2 }}</p>
+
+  <h2>ng-Repeat</h2>
+
+  <h3>Favorite Cities</h3>
+
+  <p ng-repeat="city in ['Liverpool', 'Perth', 'Sydney', 'Dublin', 'Paris']">
+    {{ $index }}. {{ city }}
+    {{ $first ? '(This is the first row)' : '' }}
+    {{ $last ? '(This is the last row)' : '' }}
+  </p>
+
+  <ul>
+    <li ng-repeat="i in [1, 2, 3, 4, 5]">{{i }}</li>
+  </ul>
+
+
+</body>
+</html>
