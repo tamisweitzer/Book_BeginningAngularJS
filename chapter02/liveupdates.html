@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../angular/angular-1.2.min.js"></script>
+</head>
+<body>
+    <h2>Live Updates</h2>
+
+    <label for="name">Name:</label>
+    <input type="text" name="name" ng-model="city">
+    <p>You entered: {{ city }}</p>
+
+    <h2>The ngShow directive</h2>
+    <p ng-show="true">I will show if true</p>
+    <p ng-show="false">I will not show if false</p>
+    <p ng-show="1 == 1">I will show if true</p>
+    <p ng-show="1 == 2">I will not show if false</p>
+
+    <h2>The ngCount directive</h2>
+    <button ng-click="count = count+1" ng-init="count = 0">Increment</button>
+    <p>count: {{ count }}</p> {{
+
+    <h2>Expression Samples</h2>
+
+    <p>Basic Arithmetic</p>
+    <p>6 + 4 = {{ 6 + 4 }} </p>
+
+    <p>Using a JavaScript string method</p>
+    <p>{{ "Beginning AngularJS".toUpperCase() }}</p>
+999999999999999999999999999999999999999q5
+    <p>Searching for an occurrences of 'D'</p>
+    <p>{{ 'ABCDEF'.indexOf('D') }}</p>
+
+    <p>Ternary operation</p>
+    <p>{{ 1==1 ? "Red" : "Blue" }}</p>
+</body>
+</html>

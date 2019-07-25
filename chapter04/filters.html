@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>4.1 - 4.3</title>
+</head>
+<body ng-controller="MyFilterDemoCtrl">
+    <p>
+        <strong>First Name: </strong>{{ data.firstName }} <br>
+        <strong>Surname: </strong>{{ data.surname }}
+    </p>
+
+    <p>
+        <strong>First Name: </strong>{{ data.firstName |lowercase }} <br>
+        <strong>Surname: </strong>{{ data.surname | lowercase }}  
+    </p>
+
+    <p>
+        <strong>Consumption: </strong>{{ data.consumption }} <br>
+        <strong>Consumption: </strong>{{ data.consumption | number:1 }} <br>
+        <strong>Consumption: </strong>{{ data.consumption | number:2 }} <br>
+        <strong>Consumption: </strong>{{ data.consumption | number:3 }} <br>
+        <strong>Consumption: </strong>{{ data.consumption | number:4 }} <br>
+        <strong>Consumption: </strong>{{ data.consumption | number:5 }} <br>
+        <strong>Consumption: </strong>{{ data.consumption | number:6 }} <br>
+        <strong>Consumption: </strong>{{ data.consumption | number:7 }} <br>
+        <strong>Consumption: </strong>{{ data.consumption | number:8 }} <br>
+    </p>
+    
+
+    <script src="../angular/angular-1.2.min.js"></script>
+    <script>
+        function MyFilterDemoCtrl($scope) {
+            var someData = {
+                firstName: 'JENNA',
+                surname: 'GRANT',
+                dateJoined: new Date(2010, 2, 23),
+                consumption: 123.659855,
+                plan: 'super-basic-plan'
+            };
+
+            $scope.data = someData;
+        }
+    </script>
+</body>
+</html>

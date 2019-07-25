@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>Pre vs Post Increment</h2>
+    // P 16
+
+    <script>
+        // Pre-increment11
+        var myNumber = 1;
+        myNumber = myNumber + 1;
+        // myNumber increments by 1 and then assings that value to the myNumber variable
+        myNumber = ++myNumber;
+        console.log("Pre-increment result is " + myNumber); // 3
+
+        // Post-Increment
+        // Post increment operator happens after the assignment operation
+        var myOtherNumber = 1;
+        myOtherNumber = myOtherNumber + 1;
+        // the current value of myOtherNumber, 2, is assigned to the variable myOtherNumber
+        // ** and then ** it is incremented by 1 but since the previous value has already
+        // been assigned to the variable, that is the value that gets printed out
+
+        myOtherNumber = myOtherNumber++;
+        console.log("Post increment result is " + myOtherNumber);   // 2
+    </script>
+    <hr>
+
+    <h2>Enumeration</h2>
+    <code>
+    <pre>
+    var myObj = {
+        firstname: 'Andrew',
+        surname: "Grant",
+        age: 21
+    }
+
+    for (prop in myObj) {
+        document.writeln(myObj[prop] + "<br>");
+    }
+    </pre> 
+    </code>
+    <script>
+        var myObj = {
+            firstname: 'Andrew',
+            surname: "Grant",
+            age: 21
+        }
+
+        for (prop in myObj) {
+            document.writeln(myObj[prop] + "<br>");
+        }
+    </script>
+    <hr>
+
+
+    <h2>Callbacks</h2>
+    <p>Callbacks are functions that you pass to another function so that they can be called at some later point.</p>
+    <script>
+        var myFunctionReference = function() {
+            console.log('callbacks part 1 ');
+        }
+
+        myFunctionReference();
+        myFunctionReference;
+        myFunctionReference();
+
+        // Another way to do it 
+        function anotherFunctionReference(i) {
+            console.log('callback part 2, : ' + i);
+        }
+
+        var x = anotherFunctionReference;
+        x(1);
+
+        anotherFunctionReference(2);
+        x(3);
+
+        anotherFunctionReference(4);
+        x(5);
+
+    </script>
+    <hr>
+
+    <h2>A Simple Callback in Action</h2>
+    <script>
+        var d = new Date();
+        var actionsToTakeLater = function() {
+            console.log('The server just responded! ' +  d.toLocaleTimeString() );
+        }
+        
+        function communicateWithServer(callback) {
+            callback();
+        }
+
+        console.log(d.toLocaleTimeString());
+        communicateWithServer(actionsToTakeLater);
+    </script>
+</body>
+</html>
