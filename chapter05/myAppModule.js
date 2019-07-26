@@ -7,7 +7,7 @@ angular.module('myAppModule').controller('myProductDetailCtrl', function($scope)
   // hide colors by default
   $scope.isHidden = true;
 
-  $scope.correctAnswer = false;
+$scope.correctAnswer = true;
 
   // a function, placed into the scope, which
   // can toggle the value of the isHidden variable

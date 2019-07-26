@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="modules">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body ng-controller="ModulesController">
+    <p>Plan type: {{ data.plan }}</p>
+    <p>Plan type: {{ data.plan | stripDashes }}</p>  
+    
+    <p>First name: {{ data.firstName | toTitleCase }}</p>
+    <p>Surname: {{ data.surname | toTitleCase }}</p>
+    <p>Full Name: {{ data.firstName +  " " + data.surname | toTitleCase }}</p>
+
+
+<script src="../angular/angular-1.2.min.js"></script>
+<script src="js/modules.js"></script>
+</body>
+</html>

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <script src="../static/angular.min.js"></script>
-  <script src="../static/myAppModule.js"></script>
+  <script src="myAppModule.js"></script>
   <link rel="stylesheet" href="../css/bootstrap.min.css">
   <style>
     body { font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, "sans-serif"; padding: 2em;  }
@@ -38,33 +38,28 @@
   </div>
 
   <span ng-include="'include-me.html'"></span>
-
   <hr>
 
   <h2>ngShow and ngHide</h2>
   <p ng-show="correctAnswer">That answer is correct!</p>
-
   <hr>
 
-  <h2>Directives</h2>
-
+  <h2>Directives</h2>   
   <p ng-bind="2+2"></p>
-
   <p>{{ 2 + 2 }}</p>
+  <hr>
 
   <h2>ng-Repeat</h2>
-
-  <h3>Favorite Cities</h3>
-
+  <h4>Favorite Cities</h4>
   <p ng-repeat="city in ['Liverpool', 'Perth', 'Sydney', 'Dublin', 'Paris']">
     {{ $index }}. {{ city }}
     {{ $first ? '(This is the first row)' : '' }}
     {{ $last ? '(This is the last row)' : '' }}
   </p>
-
   <ul>
     <li ng-repeat="i in [1, 2, 3, 4, 5]">{{i }}</li>
   </ul>
+  <hr>
 
 
 </body>
