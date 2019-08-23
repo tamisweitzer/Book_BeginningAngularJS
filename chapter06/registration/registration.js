@@ -2,9 +2,7 @@ angular.module('registrationApp', [])
 .controller('RegistrationCtrl', function($scope) {
 
   $scope.person = {};
-
   $scope.person.newsletterOptIn = false;
-
   $scope.person.channels = [
     { value: 'television', label: 'Television'},
     { value: 'radio', label: 'Radio'},
@@ -36,8 +34,6 @@ angular.module('registrationApp', [])
     if ($scope.registrationForm.$valid) {
       $scope.doShow = true;
     }
-
-
   }
 
 });

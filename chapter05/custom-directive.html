@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="customDirective">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="customdirective.css">
+    <title>Custom Directive</title>
+    <script src="../angular/angular-1.2.min.js"></script>
+    <script src="custom-directive.js"></script>
+</head>
+<body ng-controller="CustomDirectiveCtrl">
+    <header class="header">
+        <h1>Custom Directive</h1>
+    </header>
+    
+    <main class="main">
+        <h2>AngularJS Socks</h2>
+        <p>Keep warm this winter with our 100% wool, 100% cool, AngularJS socks!</p>
+        
+        <div color-list colors="colorsArray"></div>
+    </main>
+    
+    <footer class="footer">
+        <p>Copywrite &copy; 2019 Tami Sweitzer</p>
+    </footer>
+</body>
+</html>

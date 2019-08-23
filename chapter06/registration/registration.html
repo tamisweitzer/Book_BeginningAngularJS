@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Registration Form</title>
+  <style>
+    body { font-family: sans-serif; }
+    .wrapper { margin: 1em; padding: 1em; border: 1px solid #eee; border-radius: 5px; }
+    .form-item {padding: 0.5em; margin: 0.5em 0em; }
+    .form-item[type="submit"] { padding: 0.5em 1em; border-radius: 5px; }
+    .invalidFormEntry { background-color: yellow; }
+    .inline { display: inline-block; }
+    input { width: 200px; }
+    input[type='checkbox'] { width: 30px;}
+    input[name='email'].ng-dirty.ng-invalid { color: red; } /* Text color turns red when you start typing */
+    input[name='email'].ng-dirty.ng-valid { color: green; } /* Text color turns green when you've entered a valid email format */
+  </style>
+</head>
+
+
+<body>
+  <div ng-app="registrationApp" ng-controller="RegistrationCtrl" class="wrapper" >
+
+    <h1>Registration Form</h1>
+
+    <div ng-show="registrationForm.$pristine" class="">Form input has not yet started</div>
+    <div ng-show="registrationForm.$dirty" class="">Form input has started</div>
+
+    <form  name="registrationForm" ng-submit="person.register()" novalidate>
+      <div>
+        <input type="text" placeholder="First Name" name="firstName" ng-model="person.firstName" class="form-item" required>
+        <span ng-show="firstNameInvalid" class="invalidFormEntry">Please enter a first name</span>
+      </div>
+
+      <div>
+        <input type="text" placeholder="Last Name" name="lastName" ng-model="person.lastName" class="form-item"  required>
+        <span ng-show="lastNameInvalid" class="invalidFormEntry">Please enter a last name</span>
+      </div>
+
+      <div>
+        <input type="email" placeholder="Email" name="email" ng-model="person.email" class="form-item ng-pristine ng-invalid ng-invalid-required ng-valid-email"  required>
+        <span ng-show="emailInvalid" class="invalidFormEntry">Please enter an email</span>
+      </div>
+
+      <div>
+        <select name="research" id="" ng-model="person.levels" ng-options="obj.value as obj.label for obj in person.channels" class="form-item" >
+          <option value="">Where did you hear about us?</option>
+        </select>
+        <span ng-show="researchInvalid" class="invalidFormEntry">Please tell us how you heard about us</span>
+      </div>
+
+      <div>
+        <input type="checkbox" name="newsletterOptIn" id="newsletterOptIn" value="newsletterOptIn" ng-model="person.newsletterOptIn" class="form-item inline" >
+        <label for="newsletterOptIn">Receive monthly newsletter</label>
+      </div>
+
+      <div>
+        <input type="submit" value="Register" ng-click="register()" class="form-item">
+      </div>
+    </form>
+
+    <div ng-show="doShow">
+      Thank you for taking the time to register
+    </div>
+  </div><!-- /.wrapper -->
+
+<script src="../../static/angular.min.js"></script>
+<script src="registration.js"></script>
+</body>
+</html>

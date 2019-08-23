@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <style>
+    .m2 { margin: 2em 1em; padding: 1em; border: 1px solid #eee; }
+  </style>
+  <title>Document</title>
+  <script src="../../static/angular.min.js"></script>
+</head>
+
+<body>
+  <div class="container" ng-controller="AppCtrl">
+    <div class="row">
+      <div class="col">
+        <h1>HTML Forms</h1>
+
+        <section>
+          <form action="" class="">
+            <div class="m2">
+              <h3>Regular Button</h3>
+              <input type="button" name="save-button" value="Save">
+            </div>
+
+            <div class="m2">
+              <h3>Submit Button</h3>
+              <input type="submit" name="submit" value="Submit">
+            </div>
+
+            <div class="m2">
+              <h3>Text Input</h3>
+              <input type="text" placeholder="First Name" name="first-name" size="20">
+              <br><br>
+              <input type="text" placeholder="First Name" name="first-name" style="width: 220px">
+            </div>
+
+            <div class="m2">
+            <h3>Checkbox</h3>
+            <label for="chknewsletter">Opt In</label>
+            <input type="checkbox" name="chknewsletter" value="opt-in-newsletter">
+            </div>
+
+            <div class="m2">
+            <h3>Password</h3>
+            <input type="password" name="pin" id="pin">
+            </div>
+
+            <div class="m2">
+              <h3>Radio Buttons</h3>
+              <div>
+                <input type="radio" name="station" id="rad1" value="triple-m" />
+                <label for="rad1">Triple M</label>
+              </div>
+
+              <div>
+                <input type="radio" name="station" id="rad2" value="today-fm" />
+                <label for="rad2">Today FM</label>
+              </div>
+
+              <div>
+                <input type="radio" name="station" id="rad3" value="abc-news" />
+                <label for="rad3">ABC News</label>
+              </div>
+
+              <div>
+                <input type="radio" name="station" id="rad4" value="triple-j" />
+                <label for="rad4">Triple J</label>
+              </div>
+          </div>
+
+            <div class="m2">
+              <h3>Textarea</h3>
+              <textarea name="description" rows="4" cols="50"></textarea>
+            </div>
+
+
+            <div class="m2">
+              <h3>Select</h3>
+              <select name="favorite-food" id="favorite-food">
+                <option value="">Chooose One</option>
+                <option value="">Eggs</option>
+                <option value="">Fish</option>
+                <option value="">Bread</option>
+              </select>
+              <br>
+              <br>
+              <select name="favorite-food2" id="favorite-food2" multiple>
+                <option value="">Choose One or More</option>
+                <option value="">Eggs</option>
+                <option value="">Fish</option>
+                <option value="">Bread</option>
+              </select>
+            </div>
+
+            <div class="m2">
+              <input type="text" name="firstName" ng-model="firstName">
+              <input type="button" value="show first name" ng-click="showFirstName();">
+            </div>
+
+            <div style="margin-top: 100px; "></div>
+          </form>
+        </section>
+
+        <div style="margin-top: 200px; "></div>
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+
+<script>
+  var app = angular.module('app', []);
+  app.controller('AppCtrl', function($scope) {
+    if (angular.isDefined($scope.firstName)) {
+      $scope.showFirstName = function() {
+        alert("Name is " + $scope.firstName);
+      }
+    }
+  });
+
+</script>
+</body>
+</html>

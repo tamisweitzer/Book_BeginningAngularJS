@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <title>Forms</title>
+    <script src="../../angular/angular-1.2.min.js"></script>
+    <script src="ngForms.js"></script>
+</head>
+
+<body>
+    <div class="m-2" ng-app="app" ng-controller="AppCtrl">
+        <h2>Forms</h2>
+
+        <form name="registrationForm" ng-submit="register()" novalidate>
+          <div>
+            <input type="text" placeholder="First Name" name="firstName"
+                   ng-model="person.firstName" required  class="m-2" />
+            <span ng-show="firstNameInvalid">Please enter a value for first name</span>
+            <br>
+          </div>
+
+          <div>
+            <input type="text" placeholder="Last Name" name="lastName"
+                   ng-model="person.lastName" required class="m-2" />
+            <span ng-show="lastNameInvalid">Please enter a value for last name</span>
+          </div>
+
+          <div>
+            <input type="email" placeholder="Email" name="email"
+                   ng-model="person.email" required class="m-2" />
+            <span ng-show="emailInvalid">Please enter a value for email</span>
+            <br>
+
+            <select name="research" ng-model="person.channels" class="m-2"
+                    ng-options="obj.value as obj.label for obj in person.channels" required >
+                <option value="">Where did you hear about us?</option>
+            </select>
+            <span ng-show="researchInvalid">Please tell us where you heard about us</span>
+          </div>
+
+          <div>
+            <input type="checkbox" ng-model="person.newsletterOptIn"
+                   name="newsletterOptIn" id="newsletterOptIn" value="newsletterOptIn" class="m-2" >
+            <label for="newsletterOptIn">Receive monthly newsletter</label>
+          </div>
+
+          <div>
+            <input type="submit" value="Register" class="m-2">
+          </div>
+        </form>
+
+        <div ng-show="doShow">
+            Thank you for taking the time to register!
+        </div>
+    </div>
+</body>
+</html>
