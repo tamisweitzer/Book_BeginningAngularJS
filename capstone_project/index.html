@@ -19,8 +19,8 @@
   </div>
   
   <div class="container my-4">
-    <h2>Show / Hide Content One Item</h2>
-    
+    <h2 class="mb-3">Show / Hide Content One Item</h2>
+    <p>Show/Hide a div by setting an ngClick event on the h3 element, which fires a function in the controller which sets the ng-show property on the div to 'true'.</p>
     <h3 id="one" class="hideShowTarget" ng-click="showContent()">
       <span>
         <i class="{{ contentVisible ? 'bi bi-caret-down-fill' : 'bi bi-caret-right-fill'}}"></i>
@@ -33,8 +33,9 @@
   </div>
 
   <div class="container my-4">
-    <h2 class="mt-5">Show/Hide Series of Items</h2>
+    <h2 class="mt-5 mb-3">Show/Hide Series of Items</h2>
 
+    <p>Show/Hide a DIV by using the ngClick event to toggle the ngModel property on the DIV element. The change between show and hide happens quickly, and is a bit jarring.</p>
     <h3 id="" class="hideShowTarget" ng-click="sec1 = !sec1">
       <span>
         <i class="{{ sec1 ? 'bi bi-caret-down-fill' : 'bi bi-caret-right-fill'}}"></i>
@@ -56,7 +57,8 @@
     </div>
   </div>
 
-  <div class="container my-4 hideShowParent">
+  <div class="container mt-4 hideShowParent">
+    <p>Show/Hide a DIV, same as above, but this one includes jQuery's .slideToggle() for a smoother transition.</p>
     <h3 class="slideToggleTrigger" ng-click="handleSlideToggle($event); sec3 = !sec3">
       <span>
         <i class="{{ sec3 ? 'bi bi-caret-down-fill' : 'bi bi-caret-right-fill'}}"></i>
