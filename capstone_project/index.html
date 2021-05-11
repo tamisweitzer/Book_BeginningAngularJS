@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capstone Project</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body ng-controller="AppController">
+  <div class="container">
+    <h1>Capstone Project</h1>
+  </div>
+
+  <div class="container">
+   Test message:  {{ msg }}
+  </div>
+  
+  <div class="container my-4">
+    <h2>Show / Hide Content One Item</h2>
+    
+    <h3 id="one" class="hideShowTarget" ng-click="showContent()">
+      <span>
+        <i class="{{ contentVisible ? 'bi bi-caret-down-fill' : 'bi bi-caret-right-fill'}}"></i>
+      </span>
+      Click me to show content
+    </h3>
+    <div id="oneSibling" class="hideShowContent" ng-show="contentVisible">
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt, unde ipsa corrupti quis aut accusamus dignissimos praesentium repellat, obcaecati voluptatibus quia ipsum similique illo error nobis. Porro itaque quasi sed.</p>
+    </div>
+  </div>
+
+  <div class="container my-4">
+    <h2 class="mt-5">Show/Hide Series of Items</h2>
+
+    <h3 id="" class="hideShowTarget" ng-click="sec1 = !sec1">
+      <span>
+        <i class="{{ sec1 ? 'bi bi-caret-down-fill' : 'bi bi-caret-right-fill'}}"></i>
+      </span>
+      Click me to show content 1
+    </h3>
+    <div id="" class="hideShowContent" ng-model="sec1" ng-show="sec1">
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt, unde ipsa corrupti quis aut accusamus dignissimos praesentium repellat, obcaecati voluptatibus quia ipsum similique illo error nobis. Porro itaque quasi sed.</p>
+    </div>
+
+    <h3 id="" class="hideShowTarget" ng-click="sec2 = !sec2">
+      <span>
+        <i class="{{ sec2 ? 'bi bi-caret-down-fill' : 'bi bi-caret-right-fill'}}"></i>
+      </span>
+      Click me to show content 2
+    </h3>
+    <div id="" class="hideShowContent" ng-model="sec2"  ng-show="sec2">
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt, unde ipsa corrupti quis aut accusamus dignissimos praesentium repellat, obcaecati voluptatibus quia ipsum similique illo error nobis. Porro itaque quasi sed.</p>
+    </div>
+  </div>
+
+  <div class="container my-4 hideShowParent">
+    <h3 class="slideToggleTrigger" ng-click="handleSlideToggle($event); sec3 = !sec3">
+      <span>
+        <i class="{{ sec3 ? 'bi bi-caret-down-fill' : 'bi bi-caret-right-fill'}}"></i>
+      </span>
+      Hide / Show using jQuery .slideToggle()</h3>
+    <div class="slideToggleContent sec3"  ng-model="sec3"  >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur repellendus possimus ipsam optio assumenda! Beatae quae facilis odio modi iste autem rem maxime quo veritatis doloremque facere recusandae, neque obcaecati!</div>
+
+    <h3 class="slideToggleTrigger" ng-click="handleSlideToggle($event); sec4 = !sec4">
+      <span>
+        <i class="{{ sec4 ? 'bi bi-caret-down-fill' : 'bi bi-caret-right-fill'}}"></i>
+      </span>
+      Hide / Show using jQuery .slideToggle()</h3>
+    <div class="slideToggleContent sec4"  ng-model="sec4" >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur repellendus possimus ipsam optio assumenda! Beatae quae facilis odio modi iste autem rem maxime quo veritatis doloremque facere recusandae, neque obcaecati!</div>
+  </div>
+  
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="../angular/1.2/angular.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

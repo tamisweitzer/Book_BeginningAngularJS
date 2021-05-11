@@ -1,7 +1,7 @@
 
-var winapp = angular.module('winApp', []);
+var winApp = angular.module('winApp', []);
 
-winapp.controller('WinCtrl', function($scope, $window, $location, $document) {
+winApp.controller('WinCtrl', function($scope, $window, $location, $document) {
 
   // $window service
   $scope.winWidth = $window.innerWidth;

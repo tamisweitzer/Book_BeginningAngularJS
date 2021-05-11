@@ -1,0 +1,27 @@
+/* Hide / Show content managed by ngShow/ngHide */
+.hideShowTarget,
+.hideShowTrigger {
+  cursor: pointer;
+  background-color: lavender;
+  margin-top: 1rem;
+  padding: 0.3rem 0.5rem;
+}
+.hideShowContent {
+  background-color: lavenderblush;
+  padding: 1rem;
+  margin: -0.5rem 0 0 0;
+}
+
+/* Hide / Show content managed by jQuery */
+.slideToggleTrigger {
+  cursor: pointer;
+  background-color: lavender;
+  margin-top: 1rem;
+  padding: 0.3rem 0.5rem;
+}
+.slideToggleContent {
+  background-color: lavenderblush;
+  padding: 1rem;
+  margin: -0.5rem 0 0 0;
+  display: none;
+}
